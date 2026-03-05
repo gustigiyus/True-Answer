@@ -1,0 +1,91 @@
+body {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    margin: 0;
+    background-color: #f9f4f5; /* Warna pastel lembut */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Membuat konten selalu di tengah layar vertikal */
+}
+
+.container {
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1); /* Efek bayangan pink lembut */
+}
+
+h1 {
+    font-size: 42px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #e91e63; /* Warna romantis untuk judul */
+}
+
+/* Styling khusus untuk gambar Waguri */
+.waguri-img {
+    width: 280px;
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    border: 3px solid #ff4081; /* Bingkai pink */
+}
+
+.buttons {
+    margin: 20px;
+    position: relative;
+    min-height: 50px; /* Menjaga ruang agar tidak berantakan saat tombol No lari */
+}
+
+button {
+    font-family: 'Arial', sans-serif; /* Font tombol dibikin lebih mudah dibaca */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff4081;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #ff5c8d;
+    transform: scale(1.05); /* Efek membesar sedikit saat disentuh cursor */
+}
+
+#no-btn {
+    position: relative;
+    z-index: 10;
+}
+
+.popup {
+    display: none;
+    background-color: #fff;
+    border: 2px solid #e91e63;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(233, 30, 99, 0.3);
+    padding: 30px 40px;
+    position: fixed; /* Pakai fixed agar selalu di tengah layar browser */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    color: #e91e63;
+}
+
+/* Animasi fade-in yang kamu buat sebelumnya */
+.popup.fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
