@@ -6,56 +6,56 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Membuat konten selalu di tengah layar vertikal */
+    min-height: 100vh; /* Konten selalu di tengah */
+    overflow: hidden; /* Mencegah layar HP bisa digeser-geser saat tombol lari */
 }
 
 .container {
-    padding: 30px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1); /* Efek bayangan pink lembut */
+    padding: 20px;
+    width: 100%;
+    z-index: 1;
 }
 
 h1 {
-    font-size: 42px;
+    font-size: 38px;
     margin-top: 0;
-    margin-bottom: 20px;
-    color: #e91e63; /* Warna romantis untuk judul */
+    margin-bottom: 25px;
+    color: #e91e63;
+    padding: 0 15px; /* Biar teks gak nabrak pinggir layar di HP */
 }
 
-/* Styling khusus untuk gambar Waguri */
+/* Gambar Waguri jadi fokus utamanya */
 .waguri-img {
-    width: 280px;
-    max-width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    margin-bottom: 20px;
-    border: 3px solid #ff4081; /* Bingkai pink */
+    width: 250px;
+    max-width: 85%;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.25); /* Bayangan pink halus di fotonya saja */
+    margin-bottom: 30px;
 }
 
 .buttons {
-    margin: 20px;
     position: relative;
-    min-height: 50px; /* Menjaga ruang agar tidak berantakan saat tombol No lari */
+    min-height: 60px; 
 }
 
 button {
-    font-family: 'Arial', sans-serif; /* Font tombol dibikin lebih mudah dibaca */
-    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
     font-weight: bold;
-    padding: 12px 24px;
+    padding: 12px 25px;
     margin: 10px;
     border: none;
-    border-radius: 20px;
+    border-radius: 30px; /* Dibikin lebih bulat biar elegan */
     background-color: #ff4081;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3); /* Bayangan di tombol */
+    transition: transform 0.2s, background-color 0.3s;
 }
 
 button:hover {
     background-color: #ff5c8d;
-    transform: scale(1.05); /* Efek membesar sedikit saat disentuh cursor */
+    transform: scale(1.05);
 }
 
 #no-btn {
@@ -63,29 +63,39 @@ button:hover {
     z-index: 10;
 }
 
+/* Popup pesan terakhir */
 .popup {
     display: none;
-    background-color: #fff;
-    border: 2px solid #e91e63;
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(233, 30, 99, 0.3);
-    padding: 30px 40px;
-    position: fixed; /* Pakai fixed agar selalu di tengah layar browser */
+    background-color: rgba(255, 255, 255, 0.95); /* Putih tapi agak transparan sedikit */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+    padding: 30px 20px;
+    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
     font-family: 'Dancing Script', cursive;
-    font-size: 32px;
+    font-size: 28px;
     color: #e91e63;
+    width: 80%;
+    max-width: 320px;
+    text-align: center;
 }
 
-/* Animasi fade-in yang kamu buat sebelumnya */
+/* Efek pop-up muncul mumbul sedikit */
 .popup.fade-in {
-    animation: fadeIn 0.4s ease forwards;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, -60%); }
-    to { opacity: 1; transform: translate(-50%, -50%); }
+@keyframes popIn {
+    from { opacity: 0; transform: translate(-50%, -40%) scale(0.8); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Penyesuaian akhir untuk layar HP yang sangat kecil */
+@media (max-width: 400px) {
+    h1 { font-size: 32px; }
+    .waguri-img { width: 200px; }
+    button { font-size: 14px; padding: 10px 20px; }
 }
