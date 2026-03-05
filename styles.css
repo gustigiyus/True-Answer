@@ -2,17 +2,21 @@ body {
     font-family: 'Great Vibes', cursive;
     text-align: center;
     margin: 0;
-    background-color: #f9f4f5; /* Warna pastel lembut */
+    background-color: #f9f4f5; /* Warna pastel lembut di seluruh layar */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Konten selalu di tengah */
-    overflow: hidden; /* Mencegah layar HP bisa digeser-geser saat tombol lari */
+    min-height: 100vh;
+    overflow: hidden; /* Mencegah layar HP bergeser */
 }
 
+/* KOTAK PUTIH DIHAPUS TOTAL DI SINI */
 .container {
     padding: 20px;
     width: 100%;
+    background: transparent !important; /* Paksa transparan */
+    box-shadow: none !important; /* Paksa hilangkan bayangan kotak putih */
+    border: none !important;
     z-index: 1;
 }
 
@@ -21,15 +25,14 @@ h1 {
     margin-top: 0;
     margin-bottom: 25px;
     color: #e91e63;
-    padding: 0 15px; /* Biar teks gak nabrak pinggir layar di HP */
+    padding: 0 15px;
 }
 
-/* Gambar Waguri jadi fokus utamanya */
 .waguri-img {
     width: 250px;
     max-width: 85%;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.25); /* Bayangan pink halus di fotonya saja */
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.25);
     margin-bottom: 30px;
 }
 
@@ -45,11 +48,11 @@ button {
     padding: 12px 25px;
     margin: 10px;
     border: none;
-    border-radius: 30px; /* Dibikin lebih bulat biar elegan */
+    border-radius: 30px;
     background-color: #ff4081;
     color: #fff;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3); /* Bayangan di tombol */
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3);
     transition: transform 0.2s, background-color 0.3s;
 }
 
@@ -63,10 +66,9 @@ button:hover {
     z-index: 10;
 }
 
-/* Popup pesan terakhir */
 .popup {
     display: none;
-    background-color: rgba(255, 255, 255, 0.95); /* Putih tapi agak transparan sedikit */
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
     padding: 30px 20px;
@@ -83,7 +85,6 @@ button:hover {
     text-align: center;
 }
 
-/* Efek pop-up muncul mumbul sedikit */
 .popup.fade-in {
     animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
@@ -93,7 +94,6 @@ button:hover {
     to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-/* Penyesuaian akhir untuk layar HP yang sangat kecil */
 @media (max-width: 400px) {
     h1 { font-size: 32px; }
     .waguri-img { width: 200px; }
